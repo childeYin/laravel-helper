@@ -42,7 +42,7 @@ class FileHelper{
      *
      *
      */
-    public static function upload($file,  $filePath, $fileMode = '0777',  $fileName='', $algo = 'md5')
+    public static function upload($file,  $filePath, $folderMode = '0777',  $fileName='', $algo = 'md5')
     {
 
         if (!$file->isValid()) {
@@ -67,7 +67,7 @@ class FileHelper{
             $fileName = $oldFileName;
         }
         
-        $floderFlag = self::createMultiDir($filePath, $fileMode);
+        $floderFlag = self::createMultiDir($filePath, $folderMode);
 
         if(!$floderFlag){
             return false;
@@ -148,7 +148,7 @@ class FileHelper{
      * @return string 
      *
      */
-    public static function generateFileName($file, $algo)
+    public static function generateFileName($file, $algo = 'md5')
     {
         $ext = $file->getClientOriginalExtension();
         $fileName = $file->getClientOriginalName();
