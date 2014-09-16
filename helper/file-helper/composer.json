@@ -1,0 +1,20 @@
+{
+    "name": "helper/file-helper",
+    "description": "",
+    "authors": [
+        {
+            "name": "zhangjun",
+            "email": "zhangjun516@126.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Helper\\FileHelper": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
