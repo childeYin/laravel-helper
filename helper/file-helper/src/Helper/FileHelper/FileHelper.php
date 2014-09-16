@@ -4,12 +4,6 @@ namespace Helper\FileHelper;
 
 class FileHelper{
 
-    public $file;
-    
-    public $uploadDir; 
-
-    public $newFileName;
-
     public static  $FILE_SIZE = 100000;
 
     public static $MINE_TYPE = array(
@@ -63,13 +57,13 @@ class FileHelper{
 
         if ($fileName == '') {
             $fileName = self::generateFileName($file, $algo);
-        }else{
+        } else {
             $fileName = $oldFileName;
         }
         
         $floderFlag = self::createMultiDir($filePath, $folderMode);
 
-        if(!$floderFlag){
+        if (!$floderFlag) {
             return false;
         }
 
@@ -77,6 +71,7 @@ class FileHelper{
 
          return $fileName;
     }
+
     /*
      * set the file type of what you accepted
      *
@@ -90,6 +85,7 @@ class FileHelper{
         }
         self::$MIME_TYPE = $mimeType;
     }
+
     /*
      *    
      * test the file's type,
@@ -103,11 +99,13 @@ class FileHelper{
     public static function testFileType($file)
     {
         $type = $file->getClientMimeType();
-        if(!array_search($type, self::$MINE_TYPE)){
+        if (!array_search($type, self::$MINE_TYPE)) {
             return false;
         }
         return true;
     }
+
+
     /*
      * set the file size of what you accepted
      *
@@ -118,6 +116,8 @@ class FileHelper{
     {
         self::$FILE_SIZE = intval($fileSize);
     }
+
+
     /*
      *    
      * test the file's size,
