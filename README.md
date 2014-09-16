@@ -16,7 +16,7 @@
 
 检查文件大小:
 
-   FileHelper::testFileSize($file);
+     FileHelper::testFileSize($file);
 
 生成新的文件名称:
 
