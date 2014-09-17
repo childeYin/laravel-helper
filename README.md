@@ -26,11 +26,6 @@
 
             );
 
-    FileHelper::setFileType($mimeType);
-
-设置上传文件大小:
-
-    FileHelper::setFileSize($fileSize);
 
 检查文件类型
 
